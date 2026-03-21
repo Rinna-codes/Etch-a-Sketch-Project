@@ -18,13 +18,19 @@ function createGridCells(size) {
     }
 };
 
+const generatePastel = () => {
+  const h = Math.floor(Math.random() * 360);
+  // hsl => hue, saturation%, lightness% 
+  return `hsl(${h}, 80%, 90%)`;
+};
+
+
 // Trigger a hover effect over the grid cells to change to a blue
 container.addEventListener('mouseover', (event) => {
     const target = event.target;
 
     if (target.classList.contains('grid-cell') && !target.dataset.colored) { // checks if the event(mouse) is "over" the grid cells
-        const randomHex = () => '#' + Math.floor(Math.random() * 16777215).toString(16);
-        event.target.style.backgroundColor = randomHex();
+        event.target.style.backgroundColor = generatePastel();
         target.dataset.colored = 'true'; // marks an element colored
     }
 });
