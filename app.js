@@ -1,5 +1,6 @@
 const container = document.getElementById("grid-container");
 const gridSizeBtn = document.getElementById('grid-number');
+const resetGridBtn = document.getElementById('reset-grid');
 
 function createGridCells(size) {
     container.textContent = ''; // clears the grid before making a new one
@@ -19,12 +20,17 @@ function createGridCells(size) {
 
 // Trigger a hover effect over the grid cells to change to a blue
 container.addEventListener('mouseover', (event) => {
-    if (event.target.classList.contains('grid-cell')) { // checks if the event(mouse) is "over" the grid cells
-        event.target.style.backgroundColor = 'blue';
+    const target = event.target;
+
+    if (target.classList.contains('grid-cell') && !target.dataset.colored) { // checks if the event(mouse) is "over" the grid cells
+        const randomHex = () => '#' + Math.floor(Math.random() * 16777215).toString(16);
+        event.target.style.backgroundColor = randomHex();
+        target.dataset.colored = 'true'; // marks an element colored
     }
 });
 
 gridSizeBtn.addEventListener('click', () => {
+    container.textContent = '';
     const userInput = prompt("What grid size would you like to set (#x#): ");
 
     if (userInput >= 100) {
@@ -35,3 +41,7 @@ gridSizeBtn.addEventListener('click', () => {
         createGridCells(userInput);
     }
 });
+
+resetGridBtn.addEventListener('click', () => {
+    container.textContent = '';
+})
