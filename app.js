@@ -1,9 +1,16 @@
 const container = document.getElementById("grid-container");
 const gridSizeBtn = document.getElementById('grid-number');
 
-function createGridCells(userInput) {
-    const gridSize = userInput * userInput;
-    for (let i = 0; i < gridSize; i++) { // 256 came from the total of 16x16 
+function createGridCells(size) {
+    container.textContent = ''; // clears the grid before making a new one
+    const totalCells = size * size;
+
+    // Defines the columns and rows based on what the user inputs for the grid size
+    // Uses the repeat function to repeat the same sequence of sizes for the grid cells
+    container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+
+    for (let i = 0; i <= totalCells; i++) { // 256 came from the total of 16x16 
         const cells = document.createElement('div');
         cells.classList.add('grid-cell'); // made a class called 'grid-cell' to appear on html web page
         container.appendChild(cells); // what made the cells to appear in the web page
@@ -28,5 +35,3 @@ gridSizeBtn.addEventListener('click', () => {
         createGridCells(userInput);
     }
 });
-
-baseGrid();
