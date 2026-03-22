@@ -49,5 +49,5 @@ gridSizeBtn.addEventListener('click', () => {
 });
 
 resetGridBtn.addEventListener('click', () => {
-    container.textContent = '';
-})
+    container.textContent = ''; 
+});
