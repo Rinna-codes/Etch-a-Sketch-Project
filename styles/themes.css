@@ -1,0 +1,21 @@
+:root[data-theme="dark"] {
+  --bg-app: #12153d;
+  --bg-sidebar: #1A1A2D;
+  --bg-canvas: #1F1F4C;
+  --accent: #FEC13B;
+  --text-primary: #FEC13B;
+  --text-muted: #7285B8;
+  --border-color: #FEC13B;
+  --bg-element:#1A1A2D; 
+}
+
+:root[data-theme="light"] {
+  --bg-app: #FEC13B;
+  --bg-sidebar: #1F1F4C;
+  --bg-canvas: #7285B8;  /* ← updated */
+  --accent: #1A1A2D;
+  --text-primary: #12153d;  /* ← also update this if you haven't */
+  --text-muted: #7285B8;
+  --border-color: #1F1F4C;
+  --bg-element: #1A1A2D;
+}
