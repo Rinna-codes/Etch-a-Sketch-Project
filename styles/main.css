@@ -38,6 +38,17 @@ h1 {  /*Takes care of the title logo of the web page*/
     display: inline-block;  
 }
 
+.stats { /*Can worry about the dividing lines between each word later*/
+    display:flex;
+    gap: 50px;
+    padding: 20px;
+    margin-left: 200px; /*Consider putting to auto if need be depending on how page responds*/
+    border: 0.5px solid #eeee;
+    border-radius: 13px;
+    color: var(--text-primary);
+    background-color: var(--bg-element);
+}
+
  /* --------------------------------------------Main Section for CSS -------------------------------------------------*/
 #main {
   display: flex;
