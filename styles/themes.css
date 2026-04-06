@@ -6,15 +6,15 @@
   --text-primary: #FEC13B;
   --text-muted: #7285B8;
   --border-color: #FEC13B;
-  --bg-element:#1A1A2D; 
+  --bg-element: #1A1A2D;
 }
 
 :root[data-theme="light"] {
   --bg-app: #FEC13B;
   --bg-sidebar: #1F1F4C;
-  --bg-canvas: #7285B8;  /* ← updated */
+  --bg-canvas: #7285B8;
   --accent: #1A1A2D;
-  --text-primary: #12153d;  /* ← also update this if you haven't */
+  --text-primary: #12153d;
   --text-muted: #7285B8;
   --border-color: #1F1F4C;
   --bg-element: #1A1A2D;
