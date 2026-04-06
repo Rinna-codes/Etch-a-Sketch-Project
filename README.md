@@ -1,2 +1,2 @@
-#Project 1: Etch A Sketch 
+# Project 1: Etch A Sketch 
 Currently in progress
