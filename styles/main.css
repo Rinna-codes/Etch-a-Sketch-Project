@@ -1,3 +1,5 @@
+@import url('https://googleapis.com'); /*Helps in getting importing font*/
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,12 +18,27 @@ body {
   background-color: var(--bg-app);
 }
 
+ /* --------------------------------------Top Bar Section for CSS -------------------------------------------------*/
+
 .topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 25px;
 }
 
+h1 {  /*Takes care of the title logo of the web page*/
+    font-family: 'Playfair Display', serif;
+    font-size: 45px;
+    color: var(--text-primary);
+    border: 2px solid var(--bg-element); 
+    background-color: var(--bg-element);
+    border-radius: 9999px;   
+    padding: 10px 15px;     
+    display: inline-block;  
+}
+
+ /* --------------------------------------------Main Section for CSS -------------------------------------------------*/
 #main {
   display: flex;
   flex-direction: row;
@@ -29,7 +46,7 @@ body {
 }
 
 #side-bar {
-  width: 280px;
+  width: 400px;
   flex-shrink: 0;
   background-color: var(--bg-sidebar);
 }
@@ -40,7 +57,7 @@ body {
 }
 
 #grid-container {
-  width: 100%;
+  width: 99%; 
   aspect-ratio: 1;
   border: 1px solid var(--border-color);
   border-radius: 10px;
