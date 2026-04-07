@@ -1,4 +1,5 @@
 @import url('https://googleapis.com'); /*Helps in getting importing font*/
+/* TODO: Start working on Toggle Switch */
 
 * {
   box-sizing: border-box;
@@ -34,8 +35,54 @@ h1 {  /*Takes care of the title logo of the web page*/
     border: 2px solid var(--bg-element); 
     background-color: var(--bg-element);
     border-radius: 9999px;   
-    padding: 10px 15px;     
+    padding: 10px 20px;     
     display: inline-block;  
+}
+
+/* +++++++++ Entire block is to create the toggle animation +++++++++*/
+.switch input { /* Hides the default/browser checkbox */
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.switch { /*Takes care of where the toggle will be at */
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 34px;
+}
+
+.day-light { /*Takes care of what the initial state of the toggle looks like*/
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: black;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.day-light::before { /*makes the pseudo-element for cicular handle in toggle*/
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #bdbbbb;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+/* Changes the background color when checked/clicked on */
+input:checked + .day-light {
+  background-color: var(--accent);
+}
+
+/* Move the circular ball to the right when clicked on*/
+input:checked + .day-light::before {
+  transform: translateX(35px);
 }
 
 .stats { /*Can worry about the dividing lines between each word later*/
@@ -48,6 +95,8 @@ h1 {  /*Takes care of the title logo of the web page*/
     color: var(--text-primary);
     background-color: var(--bg-element);
 }
+
+
 
  /* --------------------------------------------Main Section for CSS -------------------------------------------------*/
 #main {
