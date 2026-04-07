@@ -39,7 +39,7 @@ h1 {  /*Takes care of the title logo of the web page*/
     display: inline-block;  
 }
 
-/* +++++++++ Entire block is to create the toggle animation +++++++++*/
+/* ---- Toggle Switch ---- */
 .switch input { /* Hides the default/browser checkbox */
   opacity: 0;
   width: 0;
@@ -58,7 +58,7 @@ h1 {  /*Takes care of the title logo of the web page*/
   position: absolute;
   cursor: pointer;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-color: black;
+  background-color: black; /*Made black to be all the more clear of the exact purpose of the toggle switch*/
   transition: .4s;
   border-radius: 34px;
 }
@@ -70,7 +70,7 @@ h1 {  /*Takes care of the title logo of the web page*/
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: #bdbbbb;
+  background-color: white;
   transition: .4s;
   border-radius: 50%;
 }
