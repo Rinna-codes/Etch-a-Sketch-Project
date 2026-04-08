@@ -1,5 +1,5 @@
 @import url('https://googleapis.com'); /*Helps in getting importing font*/
-/* TODO: Start working on Toggle Switch */
+/* TODO: Start working on the sidebar */
 
 * {
   box-sizing: border-box;
@@ -80,7 +80,7 @@ input:checked + .day-light {
   background-color: var(--accent);
 }
 
-/* Move the circular ball to the right when clicked on*/
+/* Move the circular ball to the right when clicked on, literally mimic a toggle*/
 input:checked + .day-light::before {
   transform: translateX(35px);
 }
@@ -109,6 +109,12 @@ input:checked + .day-light::before {
   width: 400px;
   flex-shrink: 0;
   background-color: var(--bg-sidebar);
+}
+
+h2 { /*Sets the section labels*/
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  color: var(--text-muted);
 }
 
 #canvas-area {
