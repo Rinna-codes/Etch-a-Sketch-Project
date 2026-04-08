@@ -106,8 +106,11 @@ input:checked + .day-light::before {
 }
 
 #side-bar {
+  display: grid;
   width: 400px;
-  flex-shrink: 0;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 40px;
+  padding: 20px;
   background-color: var(--bg-sidebar);
 }
 
