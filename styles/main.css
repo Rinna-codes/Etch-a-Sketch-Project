@@ -8,15 +8,18 @@
 }
 
 body {
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
   background-color: var(--bg-app);
+  overflow: hidden;
 }
 
 #app {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
   background-color: var(--bg-app);
+  overflow: hidden;
 }
 
  /* --------------------------------------Top Bar Section for CSS -------------------------------------------------*/
@@ -99,15 +102,19 @@ input:checked + .day-light::before {
 
 
  /* --------------------------------------------Main Section for CSS -------------------------------------------------*/
-#main {
+/*TODO: Change the entire web page to fit exactly the screen, a bit off putting that there is a section where you have to scroll down a page for. Don't really like that. */
+ #main {
   display: flex;
   flex-direction: row;
   flex: 1;
+  padding: 25px;
+  overflow: hidden;
 }
 
-#side-bar {
+#side-bar { /*properly formats the section labels in the side bar*/
   display: grid;
-  width: 400px;
+  width: 35vw;
+  height: 73vh;
   grid-template-columns: 1fr 1.5fr;
   gap: 40px;
   padding: 20px;
@@ -126,7 +133,8 @@ h2 { /*Sets the section labels*/
 }
 
 #grid-container {
-  width: 99%; 
+  width: 100%; 
+  height: 97%;
   aspect-ratio: 1;
   border: 1px solid var(--border-color);
   border-radius: 10px;
