@@ -90,9 +90,9 @@ input:checked + .day-light::before {
 
 .stats { /*Can worry about the dividing lines between each word later*/
     display:flex;
-    gap: 50px;
+    gap: 70px;
     padding: 20px;
-    margin-left: 200px; /*Consider putting to auto if need be depending on how page responds*/
+    margin-left: 300px; /*Consider putting to auto if need be depending on how page responds*/
     border: 0.5px solid #eeee;
     border-radius: 13px;
     color: var(--text-primary);
@@ -102,7 +102,8 @@ input:checked + .day-light::before {
 
 
  /* --------------------------------------------Main Section for CSS -------------------------------------------------*/
-/*TODO: Change the entire web page to fit exactly the screen, a bit off putting that there is a section where you have to scroll down a page for. Don't really like that. */
+/*TODO: Plan out how the side bar looks like on Figma. Fonts, buttons, animations, style, and color.*/
+
  #main {
   display: flex;
   flex-direction: row;
