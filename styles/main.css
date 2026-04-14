@@ -1,5 +1,5 @@
 @import url('https://googleapis.com'); /*Helps in getting importing font*/
-/* TODO: Start working on the sidebar */
+/* TODO: Start working on the sidebar/draw mode buttons */
 
 * {
   box-sizing: border-box;
@@ -117,14 +117,15 @@ input:checked + .day-light::before {
   width: 35vw;
   height: 73vh;
   grid-template-columns: 1fr 1.5fr;
-  gap: 40px;
+  gap: 20px 90px;
   padding: 20px;
   background-color: var(--bg-sidebar);
 }
 
 h2 { /*Sets the section labels*/
   font-family: 'Playfair Display', serif;
-  font-size: 30px;
+  font-style: italic;
+  font-size: 25px;
   color: var(--text-muted);
 }
 
@@ -139,4 +140,52 @@ h2 { /*Sets the section labels*/
   aspect-ratio: 1;
   border: 1px solid var(--border-color);
   border-radius: 10px;
+}
+
+/* adjusts the draw mode buttons into the right formatted grid columns  */
+#section-draw-mode {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+/* adjusts the draw mode buttons into the right formatted grid columns  */
+.section-labels { 
+  grid-column: 1/ -1;
+}
+
+/* CSS: testing how buttons should look*/
+.mode-btn {
+  background-color: #FEC13B;
+  border: 2px solid var(--text-muted);
+  border-radius: 20px;
+  box-shadow: var(--text-muted) 4px 4px 0 0;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 0 7px;
+  line-height: 10px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.mode-btn:hover {
+  background-color: #fff;
+}
+
+.mode-btn:active {
+  box-shadow: (var--text-muted) 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .mode-btn {
+    min-width: 90px;
+    padding: 0 15px;
+  }
 }
