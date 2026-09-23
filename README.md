@@ -1,2 +1,4 @@
 # Project Title: Etch A Sketch 
-Currently in progress of revision.
+Currently the project is a work in progress with revisions.
+
+
