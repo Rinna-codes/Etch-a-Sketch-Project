@@ -1,5 +1,12 @@
 @import url('https://googleapis.com'); /*Helps in getting importing font*/
+
+/*Main Fonts used:
+* Title: Playfair Display
+* Body: DM Mono */
+
 /* TODO: Start working on the sidebar/draw mode buttons */
+
+
 
 * {
   box-sizing: border-box;
@@ -90,6 +97,7 @@ input:checked + .day-light::before {
 
 .stats { /*Can worry about the dividing lines between each word later*/
     display:flex;
+    font-family: 'DM Mono', monospace;
     gap: 70px;
     padding: 20px;
     margin-left: 300px; /*Consider putting to auto if need be depending on how page responds*/
@@ -123,7 +131,7 @@ input:checked + .day-light::before {
 }
 
 h2 { /*Sets the section labels*/
-  font-family: 'Playfair Display', serif;
+  font-family: 'DM Mono', monospace;
   font-style: italic;
   font-size: 25px;
   color: var(--text-muted);
