@@ -1,0 +1,245 @@
+@import url('https://googleapis.com'); /*Helps in getting importing font*/
+
+/*Main Fonts used:
+* Title: Playfair Display
+* Body: DM Mono */
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-app);
+  overflow: hidden;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--bg-app);
+  overflow: hidden;
+}
+
+ /* --------------------------------------Top Bar Section for CSS -------------------------------------------------*/
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
+}
+
+h1 {  /*Takes care of the title logo of the web page*/
+    font-family: 'Playfair Display', serif;
+    font-size: 45px;
+    color: var(--text-primary);
+    border: 2px solid var(--bg-element); 
+    background-color: var(--bg-element);
+    border-radius: 9999px;   
+    padding: 10px 20px;     
+    display: inline-block;  
+}
+
+/* ---- Toggle Switch ---- */
+.switch input { /* Hides the default/browser checkbox */
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.switch { /*Takes care of where the toggle will be at */
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 34px;
+}
+
+.day-light { /*Takes care of what the initial state of the toggle looks like*/
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: black; /*Made black to be all the more clear of the exact purpose of the toggle switch*/
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.day-light::before { /*makes the pseudo-element for cicular handle in toggle*/
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+/* Changes the background color when checked/clicked on */
+input:checked + .day-light {
+  background-color: var(--accent);
+}
+
+/* Move the circular ball to the right when clicked on, literally mimic a toggle*/
+input:checked + .day-light::before {
+  transform: translateX(35px);
+}
+
+.stats { /*Can worry about the dividing lines between each word later*/
+    display:flex;
+    font-family: 'DM Mono', monospace;
+    gap: 70px;
+    padding: 20px;
+    margin-left: 300px; /*Consider putting to auto if need be depending on how page responds*/
+    border: 0.5px solid #eeee;
+    border-radius: 13px;
+    color: var(--text-primary);
+    background-color: var(--bg-element);
+}
+
+
+
+ /* --------------------------------------------Main Section for CSS -------------------------------------------------*/
+
+ #main {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  padding: 25px;
+  overflow: hidden;
+}
+
+#side-bar { /*properly formats the section labels in the side bar*/
+  display: grid;
+  width: 35vw;
+  height: 73vh;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 20px 90px;
+  padding: 20px;
+  background-color: var(--bg-sidebar);
+}
+
+h2 { /*Sets the section labels*/
+  font-family: 'DM Mono', monospace;
+  font-style: italic;
+  font-size: 25px;
+  color: var(--text-muted);
+}
+
+#canvas-area {
+  flex: 1;
+  padding: 20px;
+}
+
+#grid-container {
+  width: 100%; 
+  height: 97%;
+  aspect-ratio: 1;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+}
+
+/* adjusts the draw mode buttons into the right formatted grid columns  */
+#section-draw-mode {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* adjusts the draw mode buttons into the right formatted grid columns  */
+.section-labels { 
+  grid-column: 1/ -1;
+}
+
+/* CSS: testing how buttons should look*/
+.mode-btn {
+  background-color: #FEC13B;
+  border: 2px solid var(--text-muted);
+  border-radius: 20px;
+  box-shadow: var(--text-muted) 4px 4px 0 0;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 0 7px;
+  line-height: 10px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.mode-btn:hover {
+  background-color: #fff;
+}
+
+.mode-btn:active {
+  box-shadow: (var--text-muted) 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .mode-btn {
+    min-width: 90px;
+    padding: 0 15px;
+  }
+}
+
+/* Base Style of the range inputs/sliders */
+input[type="range"] {
+  -webkit-appearance: none; /* Remove default styling from Chrome/Safari */
+  appearance: none;
+  width: 100%;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+label[for="grid-slider"] {
+  display: inline-block;
+  font-family: "DM Mono", monospace;
+  font-size: 20px;
+  color: var(--text-primary);
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+label[for="brush-slider"] {
+  display: inline-block;
+  font-family: "DM Mono", monospace;
+  font-size: 20px;
+  color: var(--text-primary);
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/*Styling the sliders (the track line and the knob*/
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  background: #ddd;
+  border-radius: 4px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -6px; /* Centers the thumb on the track */  
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent);
+}
