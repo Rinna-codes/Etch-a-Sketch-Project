@@ -163,13 +163,14 @@ h2 { /*Sets the section labels*/
 .mode-btn {
   background-color: #FEC13B;
   border: 2px solid var(--text-muted);
-  border-radius: 20px;
+  border-radius: 10px;
   box-shadow: var(--text-muted) 4px 4px 0 0;
   color: black;
   cursor: pointer;
   display: inline-block;
+  font-family: 'DM Mono', monospace;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 14px;
   padding: 0 7px;
   line-height: 10px;
   text-align: center;
@@ -245,9 +246,39 @@ input[type="range"]::-webkit-slider-thumb {
   background: var(--accent);
 }
 
+/*Styling the action buttons*/
 #section-actions {
   display: flex;
   flex-direction: column;
   gap: 20px;
   width: 100%;
+}
+
+#btn-actions {
+  background-color: #FEC13B;
+  border: 2px solid var(--text-muted);
+  border-radius: 10px;
+  box-shadow: var(--text-muted) 4px 4px 0 0;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 0 7px;
+  line-height: 30px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#btn-actions:hover {
+  background-color: #fff;
+}
+
+#btn-actions:active {
+  box-shadow: (var--text-muted) 2px 2px 0 0;
+  transform: translate(2px, 2px);
 }
