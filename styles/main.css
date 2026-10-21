@@ -4,9 +4,6 @@
 * Title: Playfair Display
 * Body: DM Mono */
 
-/* TODO: Start working on the sidebar/draw mode buttons */
-
-
 
 * {
   box-sizing: border-box;
@@ -110,7 +107,6 @@ input:checked + .day-light::before {
 
 
  /* --------------------------------------------Main Section for CSS -------------------------------------------------*/
-/*TODO: Plan out how the side bar looks like on Figma. Fonts, buttons, animations, style, and color.*/
 
  #main {
   display: flex;
@@ -154,7 +150,7 @@ h2 { /*Sets the section labels*/
 #section-draw-mode {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  gap: 20px;
 }
 
 /* adjusts the draw mode buttons into the right formatted grid columns  */
@@ -196,4 +192,17 @@ h2 { /*Sets the section labels*/
     min-width: 90px;
     padding: 0 15px;
   }
+}
+
+/* CSS Formatting the grid size sliders*/
+input[type="range"] {
+  -webkit-appearance: none; /* Remove default styling from Chrome/Safari */
+  appearance: none;
+  width: 100%;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"]:focus {
+  outline: none;
 }
