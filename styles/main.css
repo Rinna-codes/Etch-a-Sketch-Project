@@ -156,6 +156,7 @@ h2 { /*Sets the section labels*/
 /* adjusts the draw mode buttons into the right formatted grid columns  */
 .section-labels { 
   grid-column: 1/ -1;
+  white-space: nowrap;
 }
 
 /* CSS: testing how buttons should look*/
@@ -242,4 +243,11 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: 50%;
   border: none;
   background: var(--accent);
+}
+
+#section-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
 }
